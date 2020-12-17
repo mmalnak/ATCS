@@ -4,6 +4,7 @@ var interval;
 var both = 0;
 var counter = 0;
 var currentBlocks = [];
+var speed = 0.3;
 
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
@@ -19,18 +20,20 @@ function moveRight(){
 }
 document.addEventListener("keydown", event => {
     if(both==0){
-    if(event.key==="ArrowLeft"){
-        interval = setInterval(moveLeft, 1);
+        both++;
+        if(event.key==="ArrowLeft"){
+            interval = setInterval(moveLeft, 1);
+        }
+        if(event.key==="ArrowRight"){
+            interval = setInterval(moveRight, 1);
+        }
     }
-    if(event.key==="ArrowRight"){
-        interval = setInterval(moveRight,1)
-    }
-}
 });
 document.addEventListener("keyup", event => {
     clearInterval(interval);
-    both = 0;
+    both=0;
 });
+
 var blocks = setInterval(function() {
     var blockLast = document.getElementById("block" + (counter-1));
     var holeLast = document.getElementById("hole" + (counter-1));
@@ -46,8 +49,8 @@ var blocks = setInterval(function() {
     hole.setAttribute("class", "hole");
     block.setAttribute("id", "block"+counter);
     hole.setAttribute("id", "hole"+counter);
-    block.style.top = blockLastTop + 100 + "px";
-    hole.style.top = holeLastTop + 100 + "px";
+    block.style.top = blockLastTop + 85 + "px";
+    hole.style.top = holeLastTop + 85 + "px";
     var random = Math.floor(Math.random() * 360);
     hole.style.left = random + "px";
     game.appendChild(block);
@@ -71,12 +74,13 @@ var blocks = setInterval(function() {
         let ihole = document.getElementById("hole"+current);
         let iblockTop = parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
         let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue("left"));
-        iblock.style.top = iblockTop - 0.5 + "px";
-        ihole.style.top = iblockTop - 0.5 + "px";
+        iblock.style.top = iblockTop - speed + "px";
+        ihole.style.top = iblockTop - speed + "px";
         if(iblockTop < -20){
             currentBlocks.shift();
             iblock.remove();
             ihole.remove();
+            speed+=.01;
         }
         if(iblockTop-20<characterTop && iblockTop>characterTop){
             drop++;
