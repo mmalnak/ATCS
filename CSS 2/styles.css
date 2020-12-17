@@ -125,7 +125,7 @@ h1{
 
 }
 .about-section{
-    z-index: -10;
+    z-index: 0;
     width: 90%;
     height: 350px;
     background: black;
@@ -148,6 +148,8 @@ h1{
     font-weight: bolder;
     font-size: 20px;
 }
+
+
 .resume{
     height: 30px;
     width: 130px;
@@ -158,13 +160,11 @@ h1{
     background-color: black;
     border-color: white;
     font-size: 14;
-    z-index: 50;
-    margin: -5% 160px;
+    z-index: 4;
     float: right;
+    margin-top: 200px;
 }
-.about-section button:active{
-    transform: scale(.5);
-}
+
 #sidebar{
     float: left;
     width: 30%;
@@ -175,6 +175,7 @@ h1{
     word-spacing: 1em;
 }
 #mainfooter{
+    font-size: 20px;
     background: #333;
     color: #fff;
     text-align: center;
@@ -182,11 +183,24 @@ h1{
     margin-top: 30px;
 }
 #fixed{
+    font-size: 20px;
     position: fixed;
     bottom: 0;
     right: 50px;
-    background: #ff652f;
+    background:white;
     padding: 5px;
+}
+.games{
+text-align: center;
+position: relative;
+/* margin-left: %; */
+color: white;
+}
+.contact{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    line-height: 30px;
 }
 /* #pExample{
     width: 400px;
