@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 body{
-    background-color: darkred;
+    background-color: whitesmoke;
     color: black;
     font-family: "Montserrat","Montserrat" ;
     font-size: 16px;
@@ -77,6 +77,7 @@ h1{
 #main{
     border-radius: 10px;
     color: white;
+    height: auto;
     line-height: 3px;
     background-color: black;
     /* box-shadow: 3px 5px 12px gray; */
@@ -102,12 +103,14 @@ h1{
 #main p2{
     font-size: 30px;
     line-height: 30px;
+    
     font-weight: lighter;
     font-family: 'Raleway';
     /* margin: 45px 0px 50px;   */
 }
 #main h3{
    /* bottom: 40px; */
+  
    transform: translate(20%, 0%);
    /* transform: scale(.8); */
 }
@@ -127,11 +130,11 @@ h1{
 .about-section{
     z-index: 0;
     width: 90%;
-    height: 350px;
+    height: 300px;
     background: black;
     color: white;
     border-radius: 20px;
-    box-shadow: 2px 2px 12px black;
+
     display: flex;
     margin: -2% auto 20px auto;
     position: relative;
@@ -193,13 +196,14 @@ h1{
 .games{
 text-align: center;
 position: relative;
-/* margin-left: %; */
-color: white;
+color: black;
+font-size: 30px;
+margin-bottom: 30px;
 }
 .contact{
     text-align: center;
     font-size: 40px;
-    color: white;
+    color: black;
     line-height: 30px;
 }
 /* #pExample{
